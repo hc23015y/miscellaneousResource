@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box-1 {
+  background-image: url("./source/paper.gif");
+  background-repeat: repeat-y;
+}
+
+.my-input {
+	background: url("./source/paper.gif") repeat;
+	border-radius:10px;
+}
+
+.box-2{
+	color:#444;font:100%/1.4 sans-serif;
+}
+
+
+/* CUSTOM RADIO & CHECKBOXES
+   http://stackoverflow.com/a/17541916/383904 */
+.rad,
+.ckb{
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.rad > input,
+.ckb > input{ /* HIDE ORG RADIO & CHECKBOX */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* RADIO & CHECKBOX STYLES */
+/* DEFAULT <i> STYLE */
+.rad > i,
+.ckb > i{ 
+  display: inline-block;
+  vertical-align: middle;
+  width:  16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: 0.2s;
+  box-shadow: inset 0 0 0 8px #fff;
+  border: 1px solid gray;
+  background: gray;
+}
+/* CHECKBOX OVERWRITE STYLES */
+.ckb > i {
+  width: 25px;
+  border-radius: 3px;
+}
+.rad:hover > i{ /* HOVER <i> STYLE */
+  box-shadow: inset 0 0 0 3px #fff;
+  background: gray;
+}
+.rad > input:checked + i{ /* (RADIO CHECKED) <i> STYLE */
+  box-shadow: inset 0 0 0 3px #fff;
+  background: orange;
+}
+/* CHECKBOX */
+.ckb > input + i:after{
+  content: "";
+  display: block;
+  height: 12px;
+  width:  12px;
+  margin: 2px;
+  border-radius: inherit;
+  transition: inherit;
+  background: gray;
+}
+.ckb > input:checked + i:after{ /* (RADIO CHECKED) <i> STYLE */
+  margin-left: 11px;
+  background:  orange;
+}
+
+.elments-box {
+	height : 100px;
+}
+
+</style>
+</head>
+<body>
+<h1>Html Elements Testing</h1>
+
+<div class="elments-box box-1">
+	<input type="text" class="my-input"/>
+</div>
+
+<div class="elments-box box-2">
+	<label class="rad">
+	  <input type="radio" name="rad1" value="a">
+	  <i></i> Radio 1
+	</label>
+	<label class="rad">
+	  <input type="radio" name="rad1" value="b" >
+	  <i></i> Radio 2
+	</label>
+	</body>
+	</html>
+
+	<label class="ckb">
+	  <input type="checkbox" name="ckb1" value="a" checked>
+	  <i></i> Checkbox 1
+	</label>
+	<label class="ckb">
+	  <input type="checkbox" name="ckb2" value="b">
+	  <i></i> Checkbox 2
+	</label>
+</div>
